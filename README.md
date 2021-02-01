@@ -1,0 +1,2 @@
+# zylus-coin
+A cryptocurrency
