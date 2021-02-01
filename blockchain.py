@@ -1,26 +1,32 @@
+# Imports
+
+import pprint
+
 # Extremely basic setup of the blockchain
 
 class Block:
-    def __init__(self, data, hash, previous_hash, genesis : bool=False):
-        self.data = data
+    def __init__(self, hash, prevhash, index, timestamp):
         self.hash = hash
-        self.previous_hash = previous_hash
-        self.genesis_block = genesis
-        if self.genesis_block == True:
-            print("Genesis block created.")
-        else:
-            print("Block Created.")
+        self.prevhash = prevhash
+        self.index = index
+        self.timestamp = timestamp
+        
     
 class BlockChain:
-    def __init__(self, n):
-        self.number_of_blocks = n
-        self.genesis_block = Block(" ", " ", " ", True)
-        self.blockchain = [self.genesis_block]
+    def __init__(self, chain):
+        self.chain = []
 
-        for x in range(self.number_of_blocks-1):
-            x = Block(" ", " ", " ")
-            self.blockchain.append(x)
-        
-        print(self.blockchain)
-    
-b = BlockChain(5)
+    def addblock(self, block):
+        self.chain.append(block)
+
+    def printchain(self):
+            for block in self.chain:
+                jsonarray = {}
+
+                jsonarray['hash'] = block.hash
+                jsonarray['prevhash'] = block.prevhash
+                jsonarray['index'] = block.index
+                jsonarray['timestamp'] = block.timestamp
+
+                pprint.pprint(jsonarray)
+
