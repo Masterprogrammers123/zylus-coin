@@ -1,9 +1,19 @@
 import blockchain
+import time
 
-a = blockchain.Block("LOA", None, 1, 10000)
+indexer = 1
+#timestamp
+ts = time.time()
+# make a block
 
-b = blockchain.BlockChain([])
+block1 = blockchain.Block(indexer, ts)
 
-b.addblock(a)
+blockchai = blockchain.BlockChain()
 
-b.printchain()
+blockchai.addblock(block1)
+
+block2 = blockchain.Block(2, ts)
+
+blockchai.addblock(block2)
+
+blockchai.printchain()
