@@ -22,11 +22,9 @@ class BlockChain:
     def printchain(self):
             for block in self.chain:
                 jsonarray = {}
-
                 jsonarray['hash'] = block.hash
                 jsonarray['prevhash'] = block.prevhash
                 jsonarray['index'] = block.index
                 jsonarray['timestamp'] = block.timestamp
 
                 pprint.pprint(jsonarray)
-

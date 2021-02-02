@@ -1,9 +1,15 @@
-import blockchain
+from blockchain import Block, BlockChain
+from transactions import Transactions
+from pprint import pprint
 
-a = blockchain.Block("LOA", None, 1, 10000)
+trans = Transactions(999)
+pprint(trans.generate_public_key())
+pprint(trans.generate_private_key())
 
-b = blockchain.BlockChain([])
+block = Block("LOA", None, 1, 10000)
 
-b.addblock(a)
+chain = BlockChain([])
 
-b.printchain()
+chain.addblock(block)
+
+chain.printchain()
