@@ -22,7 +22,8 @@ class BlockChain:
 
     #gets the previous hash    
     def getprevihash(self):
-        return self.chain[-1]
+        return self.chain[-1].hash
+        
     #adds block to our blockchain    
     def addblock(self, block):
         #if the blokc chain does not have a transactino then the previous hahs is none making it the genisis block
@@ -37,11 +38,9 @@ class BlockChain:
     def printchain(self):
             for block in self.chain:
                 jsonarray = {}
-
                 jsonarray['hash'] = block.hash
                 jsonarray['prevhash'] = block.previhash
                 jsonarray['index'] = block.index
                 jsonarray['timestamp'] = block.timestamp
                 # Prints out the blockchain
                 pprint.pprint(jsonarray)
-
