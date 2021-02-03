@@ -25,6 +25,6 @@ blockchai.addblock(block2)
 blockchai.printchain()
 
 #Make Transactions object, generate keys
-trans = Transactions(999)
-pprint(trans.generate_public_key())
-pprint(trans.generate_private_key())
+trans = Transactions("Phantom", "Zack", 999)
+trans.generate_public_key()
+trans.generate_private_key()
