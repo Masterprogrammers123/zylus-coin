@@ -25,11 +25,12 @@ class BlockChain:
 
     #gets the previous hash    
     def getprevihash(self):
-        return self.chain[-1].hash    
-    
+        return self.chain[-1].hash
+
+    #adds block to our blockchain    
     def addblock(self, block):
         if len(self.chain) > 0:
-            block.previhash = self.getprevihash().hash
+            block.previhash = self.getprevihash()
             self.chain.append(block)
         else:
             block.previhash = None 

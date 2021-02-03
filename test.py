@@ -14,3 +14,6 @@ bc.createblock(block1)
 bc.mineblock()
 
 bc.printchain()
+trans = Transactions("Phantom", "Zack", 999)
+trans.generate_public_key()
+trans.generate_private_key()
