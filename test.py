@@ -3,28 +3,14 @@ from transactions import Transactions
 from pprint import pprint
 from time import time
 
-indexer = 1
-#timestamp
 ts = time()
-# make a block
-block1 = Block(indexer, ts)
 
-# Make a Chain
-blockchai = BlockChain()
+bc = BlockChain()
 
-#Add block to chain
-blockchai.addblock(block1)
+block1 = Block(1, ts)
 
-# Make another block
-block2 = Block(2, ts)
+bc.createblock(block1)
 
-#Add it to chain
-blockchai.addblock(block2)
+bc.mineblock()
 
-#Print it
-blockchai.printchain()
-
-#Make Transactions object, generate keys
-trans = Transactions(999)
-pprint(trans.generate_public_key())
-pprint(trans.generate_private_key())
+bc.printchain()

@@ -1,7 +1,7 @@
 from Crypto.PublicKey import RSA
 
 class Transactions:
-    def __init__(self, amount : int):
+    def __init__(self, amount : int, key, sender, reciver):
         self.amount = amount
         self.key = RSA.generate(2048)
 
