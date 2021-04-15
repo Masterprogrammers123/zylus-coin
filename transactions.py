@@ -1,20 +1,36 @@
+from account import Account
 from Crypto.PublicKey import RSA
 
 class Transactions:
-    def __init__(self, sender : str, receiver : str, amount : int):
-        self.sender = sender
-        self.receiver = receiver
+    def __init__(self, receiver : Account, amount : int, sender : Account):
+        self.receiver = receiver 
         self.amount = amount
-        self.key = RSA.generate(2048)
+        self.sender = sender
+    
+    def add_transaction(self, sk):
+        if self.receiver == self.sender:
+            print("U are sending money to urself. U will not earn money.")
+            return False
+        if self.private_key:
+            if self.private_key == sk:
+                return True
+        if self.sender.money < self.amount:
+            print("U have less money then ur sending. PLease get more money.")
+            return False
+        else:
+            print("Please generate your keys before trying to send zylus coins, thanks!")
+            return False
 
-    def generate_public_key(self):
-        self.public_key = self.key.publickey().exportKey("PEM")
-        with open("public key.pem", "a") as f:
-            f.write(f"{self.public_key}\n")
-        return self.public_key
+        if self.private_key:
+            if self.private_key == sk:
+                return True
+                self.receiver.money += self.amount   
 
-    def generate_private_key(self):
-        self.priv_key = self.key.exportKey("PEM")
-        with open("private key.pem", "a") as f:
-            f.write(f"{self.priv_key}\n")
-        return self.priv_key
+
+    def verify_transaction(self, transaction, pk):  
+        if not self.pk or len(self.pk) > 7:
+            print("There is no signature. Nice try!")
+            return False
+        if transaction == True:
+            pass 
+                
