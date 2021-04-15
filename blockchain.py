@@ -11,6 +11,7 @@ class Block:
         self.timestamp = timestamp
         self.nonce = nonce
         self.hash = self.calculatehash()
+
     # calculate the hash
     def calculatehash(self):
         d = str("{}{}{}{}".format(self.previhash, self.index, self.timestamp, self.nonce))
@@ -20,7 +21,7 @@ class Block:
 #blockchain
 class BlockChain:
     def __init__(self, pending = [], chain = []):
-        self.chain = chain
+        self.chain = chainn
         self.pending = pending
 
     #gets the previous hash    

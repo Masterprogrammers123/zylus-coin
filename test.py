@@ -17,3 +17,5 @@ bc.printchain()
 trans = Transactions("Phantom", "Zack", 999)
 trans.generate_public_key()
 trans.generate_private_key()
+
+from blockchain import Block, BlockChain
